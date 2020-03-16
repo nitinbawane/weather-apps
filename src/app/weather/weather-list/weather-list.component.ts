@@ -20,7 +20,7 @@ export class WeatherListComponent implements OnInit {
   }
 
   updateSelectedWeatherItem(event: any) {
-    console.log('Recieved selected weather item in list component', event);
+   
     this.selectedItem = event;
   }
 

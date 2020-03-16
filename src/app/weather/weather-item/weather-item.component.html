@@ -1,12 +1,26 @@
 <article>
     <div>
-        <h2 style="text-transform: uppercase;"> {{ weather.weather[0].main }}</h2>
-        <h3 (click)="selectedWeatherItem($event)"> {{ weather.weather[0].description  | uppercase }}</h3>
-        <p>Wind speed (meter/sec): {{ weather.wind.speed }}</p>
-        <span class="temperature">Temperature (celsius): {{ weather.main.temp }} </span> <br>
-        <span class="temperature">Temperature (Fahrenheit): {{ ( weather.main.temp | temperatureConverter:'F') }}
-        </span>
-        <p>{{ weather.dt_txt | date:'medium' }}</p>
-        <a [routerLink]="['/detail-report']">Detail Report</a>
+        <table class="table">
+            <thead>
+              <tr>
+                <th>Main</th>
+                <th>Cloudiness</th>
+                <th>Wind</th>
+                <th>Temperature</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="text-transform: uppercase;">{{ weather.weather[0].main }}</td>
+                <td (click)="selectedWeatherItem($event)">{{ weather.weather[0].description  | uppercase }}</td>
+                <td>Wind speed (meter/sec): {{ weather.wind.speed }}</td>
+                <td class="temperature">Temperature (celsius): {{ weather.main.temp }}</td>
+                <td>{{ weather.dt_txt | date:'medium' }}</td>               
+              </tr>
+             
+            </tbody>
+          </table>
     </div>
+    
 </article>

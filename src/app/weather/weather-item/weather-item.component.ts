@@ -15,8 +15,7 @@ export class WeatherItemComponent {
   }
 
   selectedWeatherItem(event: Event) {
-    var item = (<HTMLDivElement>event.target);
-    console.log('Selected div element', item);
+    var item = (<HTMLDivElement>event.target);    
     //Raise event
     this.weatherItemChanges.emit(item.innerHTML);
   }

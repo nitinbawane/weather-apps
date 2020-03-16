@@ -18,7 +18,7 @@ export class AuthService {
     }
     SignOut() {
         this.signedIn = false;
-        this.router.navigate(['/today']);
+        this.router.navigate(['/signin']);
     }
     isAuthenticated() {
         return this.signedIn;

@@ -19,25 +19,25 @@ export class WeatherSearchComponent implements OnInit {
     ngOnInit() {
     }
     onSubmit(cityName: string) {
-        console.log(cityName);
+        // console.log(cityName);
         this._weatherService.getWeatherForecast(cityName)
             .subscribe(data => { this.weatherForecastData = data.list }, error => this.errorMessage = <any>error);
     }
 
     onSearchLocation(cityName: string) {
         this.disabledForecastButton = false;
-        console.log(cityName);
+        // console.log(cityName);
     }
 
     onSubmitDatabinding() {
-        console.log('Inside the two way', this.cityName);
+        // console.log('Inside the two way', this.cityName);
         this._weatherService.getWeatherForecast(this.cityName)
             .subscribe(data => { this.weatherForecastData = data.list }, error => this.errorMessage = <any>error);
         this.onResetControls();
     }
 
     onSearchLocationWithEvent(event: Event) {
-        console.log('Control event value', (<HTMLInputElement>event.target).value);
+        // console.log('Control event value', (<HTMLInputElement>event.target).value);
         this.cityName = (<HTMLInputElement>event.target).value;
         this.disabledForecastButton = false;
     }
